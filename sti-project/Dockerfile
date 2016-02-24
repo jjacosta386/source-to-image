@@ -42,7 +42,7 @@ LABEL io.openshift.s2i.scripts-url=image:///usr/local/s2i
 COPY ./.s2i/bin/ /usr/local/s2i
 
 RUN chown -R 1001:1001 /opt/openshift
-RUN chown -R 1001:1001 /usr/local/s2i
+RUN chmod -R a+rwX /usr/local/s2i
 
 # This default user is created in the openshift/base-centos7 image
 USER 1001
